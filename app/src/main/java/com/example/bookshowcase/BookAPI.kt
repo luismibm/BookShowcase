@@ -34,7 +34,7 @@ class BookAPI {
         } catch (e: Exception) {
             Log.d("BookAPI", e.message.toString())
         }
-        return  null
+        return null
     }
 
 }

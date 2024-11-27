@@ -1,5 +1,7 @@
 package com.example.bookshowcase
 
+import java.io.Serializable
+
 data class Book (
 
     val id: Int,
@@ -10,4 +12,4 @@ data class Book (
     val pages: Int,
     val description: String
 
-)
+) : Serializable

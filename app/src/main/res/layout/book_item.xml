@@ -2,23 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:gravity="center"
+    android:orientation="vertical"
     android:padding="10dp">
 
     <ImageView
         android:id="@+id/bookImage"
-        android:layout_width="100dp"
-        android:layout_height="150dp"
+        android:layout_width="175dp"
+        android:layout_height="300dp"
         android:contentDescription="@string/bookimage"
         android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/bookTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
+        android:layout_width="175dp"
+        android:layout_height="60dp"
         android:gravity="center"
-        android:paddingTop="5dp" />
+        android:paddingTop="20dp"
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+
 </LinearLayout>
