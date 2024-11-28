@@ -8,12 +8,10 @@
 
     <ImageView
         android:id="@+id/bookImageDetails"
-        android:layout_width="175dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
         android:contentDescription="@string/bookimage"
         android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,65 +19,68 @@
         android:id="@+id/bookNameDetails"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="start"
         android:paddingTop="20dp"
         android:textColor="@android:color/black"
-        android:textSize="14sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bookImageDetails" />
+        app:layout_constraintStart_toEndOf="@+id/bookImageDetails"
+        app:layout_constraintTop_toTopOf="@+id/bookImageDetails" />
 
     <TextView
         android:id="@+id/bookAuthorDetails"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:gravity="center"
+        android:gravity="start"
         android:paddingTop="20dp"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/bookNameDetails"
+        app:layout_constraintStart_toStartOf="@+id/bookNameDetails"
         app:layout_constraintTop_toBottomOf="@+id/bookNameDetails" />
 
     <TextView
         android:id="@+id/bookPagesDetails"
-        android:layout_width="140dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:gravity="start"
         android:paddingTop="12dp"
         android:textColor="@android:color/black"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bookAuthorDetails" />
-
-    <TextView
-        android:id="@+id/bookPublisherDetails"
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:paddingTop="12dp"
-        android:textColor="@android:color/black"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/bookAuthorDetails"
+        app:layout_constraintStart_toStartOf="@+id/bookAuthorDetails"
         app:layout_constraintTop_toBottomOf="@+id/bookAuthorDetails" />
 
     <TextView
         android:id="@+id/bookDescriptionDetails"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:paddingTop="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="start"
+        android:paddingTop="18dp"
         android:textColor="@android:color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bookPublisherDetails"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bookPagesDetails" />
+        app:layout_constraintTop_toBottomOf="@+id/bookImageDetails" />
+
+    <TextView
+        android:id="@+id/bookPublisherDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="12dp"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

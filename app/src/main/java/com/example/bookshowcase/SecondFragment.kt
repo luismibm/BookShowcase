@@ -11,15 +11,10 @@ import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.example.bookshowcase.databinding.FragmentSecondBinding
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
+
 class SecondFragment : Fragment() {
 
     private var _binding: FragmentSecondBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -53,18 +48,14 @@ class SecondFragment : Fragment() {
 
     @SuppressLint("SetTextI18n")
     private fun updateUi(book: Book) {
-        Log.d("XXX", book.name)
-        binding.bookNameDetails.text = book.name
-        binding.bookAuthorDetails.text = book.author
-        binding.bookPagesDetails.text = "Páginas: ${book.pages}"
-        binding.bookPublisherDetails.text = book.publisher
-        binding.bookDescriptionDetails.text = book.description
 
         val context: Context = context as Context
-
-        Glide.with(context).load(
-            book.photo
-        ).into(binding.bookImageDetails)
+        Glide.with(context).load(book.photo).into(binding.bookImageDetails)
+        binding.bookNameDetails.text = book.name
+        binding.bookAuthorDetails.text = book.author
+        binding.bookPagesDetails.text = "${book.pages} páginas"
+        binding.bookPublisherDetails.text = "Publicado por ${book.publisher}"
+        binding.bookDescriptionDetails.text = book.description
 
     }
 

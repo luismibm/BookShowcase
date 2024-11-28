@@ -5,25 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridView
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import com.example.bookshowcase.databinding.FragmentFirstBinding
 import kotlinx.coroutines.launch
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
+
 class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     val bookAPI = BookAPI()
-    // lateinit var gridView: GridView
     lateinit var bookGridAdapter: BookGridAdapter
 
     override fun onCreateView(
@@ -33,18 +26,6 @@ class FirstFragment : Fragment() {
 
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
-
-
-        /*
-        val view = inflater.inflate(R.layout.fragment_first, container, false)
-        gridView = view.findViewById(R.id.bookGridView)
-        lifecycleScope.launch {
-             fetchAndDisplayBooks()
-        }
-
-        return view
-
-         */
 
     }
 
@@ -60,10 +41,7 @@ class FirstFragment : Fragment() {
             val args = Bundle().apply {
                 putSerializable("item", book)
             }
-
-            NavHostFragment.findNavController(this)
-                .navigate(R.id.action_FirstFragment_to_SecondFragment, args)
-
+            NavHostFragment.findNavController(this).navigate(R.id.action_FirstFragment_to_SecondFragment, args)
         }
 
     }
@@ -71,13 +49,6 @@ class FirstFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    override fun onStart() {
-
-
-
-        super.onStart()
     }
 
     private suspend fun fetchAndDisplayBooks() {
